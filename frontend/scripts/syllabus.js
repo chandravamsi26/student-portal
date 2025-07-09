@@ -30,7 +30,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
     const allSyllabus = await syllabusRes.json();
 
-    // Filter based on class rule
     const filtered = allSyllabus.filter(syl => {
       const cls = parseInt(syl.className);
       return studentClass <= 10 ? cls <= 10 : cls === studentClass;
@@ -51,7 +50,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       };
 
       const subjectList = Object.entries(subjects || {})
-        .slice(0, 3) // Show max 3 subjects for preview
+        .slice(0, 3)  
         .map(([subject, topics]) => `<li><strong>${subject}</strong>: ${topics.split(",")[0]}...</li>`)
         .join("");
 

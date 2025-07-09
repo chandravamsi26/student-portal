@@ -15,7 +15,6 @@ if (!courseId || !token) {
   courseDetailsEl.innerHTML = "<p>Invalid access.</p>";
   payBtn.disabled = true;
 } else {
-  // 🔍 Fetch course details
   fetch(`http://localhost:8080/api/courses/details/${courseId}`, {
     headers: { Authorization: `Bearer ${token}` }
   })
@@ -42,7 +41,6 @@ if (!courseId || !token) {
       payBtn.disabled = true;
     });
 
-  // 💳 Handle Razorpay payment
   payBtn.addEventListener("click", async () => {
     payBtn.disabled = true;
     spinner.style.display = "block";
@@ -50,7 +48,6 @@ if (!courseId || !token) {
     statusEl.textContent = "Creating payment...";
 
     try {
-      // ✅ Step 1: Create order from backend
       const res = await fetch("http://localhost:8080/api/payment/create", {
         method: "POST",
         headers: {
@@ -62,15 +59,15 @@ if (!courseId || !token) {
 
       if (!res.ok) throw new Error("Failed to create payment");
 
-      const data = await res.json(); // contains: orderId, key, amount
+      const data = await res.json(); 
 
       const options = {
-        key: data.key, // ✅ Razorpay public key
-        amount: data.amount * 100, // in paise
+        key: data.key, 
+        amount: data.amount * 100, 
         currency: "INR",
         name: "Student Portal",
         description: courseTitle,
-        order_id: data.orderId, // ✅ Razorpay order ID from backend
+        order_id: data.orderId, 
         handler: async function (response) {
           spinner.style.display = "block";
           statusEl.textContent = "Verifying payment...";
@@ -94,7 +91,6 @@ if (!courseId || !token) {
               throw new Error(errorText);
             }
 
-            // ✅ Step 3: Enroll the student
             const enrollRes = await fetch("http://localhost:8080/api/enroll/mock", {
               method: "POST",
               headers: {

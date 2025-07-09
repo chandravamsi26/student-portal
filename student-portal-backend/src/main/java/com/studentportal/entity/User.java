@@ -14,8 +14,8 @@ public class User {
     @Id
     private String id;
 
-    private String email;     // optional
-    private String mobile;    // optional
+    private String email;
+    private String mobile;
     private String password;
 
     private boolean isVerified;

@@ -13,7 +13,7 @@ public class Student {
     @Id
     private String id;
 
-    private String userId;  // link to the mobile/email who logged in
+    private String userId;
     private String fullName;
     private String rollNumber;
     private String schoolName;

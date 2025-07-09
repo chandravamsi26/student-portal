@@ -41,7 +41,7 @@ public class EnrollmentService {
         Enrollment enrollment = Enrollment.builder()
                 .userId(userId)
                 .courseId(course.getId())
-                .courseTitle(course.getTitle()) // ✅ real title
+                .courseTitle(course.getTitle())
                 .paymentStatus("SUCCESS")
                 .enrolledAt(LocalDateTime.now().toString())
                 .build();
@@ -49,7 +49,6 @@ public class EnrollmentService {
         repository.save(enrollment);
         return "Enrollment successful!";
     }
-
 
     public List<Map<String, Object>> getCoursesForUser(String userId) {
         List<Enrollment> enrollments = repository.findByUserId(userId);
@@ -69,7 +68,6 @@ public class EnrollmentService {
                 result.add(courseData);
             }
         }
-
         return result;
     }
 }

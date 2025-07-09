@@ -10,7 +10,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST) // Instead of 401 or 500
+                .status(HttpStatus.BAD_REQUEST)
                 .body(ex.getMessage());
     }
 }

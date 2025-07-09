@@ -28,22 +28,17 @@ public class JwtService {
         secretKey = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    // ✅ Generate token with role
+    // Generate token with role
     public String generateToken(String username, Role role) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role.name()); // Include role in the token
         return createToken(claims, username);
     }
 
-    // Optional overload (defaults to USER)
-    public String generateToken(String username) {
-        return generateToken(username, Role.USER);
-    }
-
     private String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
                 .setClaims(claims)
-                .setSubject(subject) // email or mobile
+                .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
                 .signWith(secretKey, SignatureAlgorithm.HS256)
@@ -54,11 +49,11 @@ public class JwtService {
         return extractAllClaims(token).getSubject();
     }
 
-    // ✅ Extract role from token
+    // Extract role from token
     public Role extractUserRole(String token) {
         Claims claims = extractAllClaims(token);
         String roleStr = claims.get("role", String.class);
-        return Role.valueOf(roleStr); // Throws if missing/malformed
+        return Role.valueOf(roleStr);
     }
 
     private Claims extractAllClaims(String token) {

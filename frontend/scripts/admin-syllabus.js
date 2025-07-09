@@ -15,8 +15,6 @@ const syllabusIdInput = document.getElementById('syllabusId');
 
 let currentClass = null;
 
-// const classes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-
 const classFilter = document.getElementById("classFilter");
 
 classFilter.addEventListener("change", () => {
@@ -29,8 +27,6 @@ classFilter.addEventListener("change", () => {
   }
 });
 
-
-// Fetch syllabus by class
 function fetchSyllabusByClass(className) {
   syllabusContainer.innerHTML = '';
   fetch(`${API_BASE}/${className}`, {
@@ -51,7 +47,6 @@ function fetchSyllabusByClass(className) {
     });
 }
 
-// Render syllabus card
 function renderSyllabusCard(syllabus) {
   const card = document.createElement('div');
   card.className = 'syllabus-card';
@@ -84,7 +79,6 @@ function renderSyllabusCard(syllabus) {
   syllabusContainer.appendChild(card);
 }
 
-// Open modal to add or edit
 function openModal() {
   modal.style.display = 'flex';
 }
@@ -96,14 +90,12 @@ function closeModal() {
   modalTitle.textContent = 'Add Syllabus';
 }
 
-// Add syllabus button
 addBtn.addEventListener('click', () => {
   modalTitle.textContent = 'Add Syllabus';
   openModal();
   if (currentClass) classNameInput.value = currentClass;
 });
 
-// Close modal
 closeModalBtn.addEventListener('click', closeModal);
 window.addEventListener('click', e => {
   if (e.target === modal) closeModal();
@@ -138,7 +130,7 @@ syllabusForm.addEventListener('submit', e => {
   })
     .then(res => {
       if (!res.ok) throw new Error('Failed to save');
-      return res.json().catch(() => ({})); // For POST that returns plain string
+      return res.json().catch(() => ({}));  
     })
     .then(() => {
       alert('Syllabus saved successfully.');
@@ -148,7 +140,6 @@ syllabusForm.addEventListener('submit', e => {
     .catch(() => alert('Error saving syllabus.'));
 });
 
-// Open modal to edit syllabus
 function openEditModal(syllabus) {
   modalTitle.textContent = 'Edit Syllabus';
   syllabusIdInput.value = syllabus.id;
@@ -157,7 +148,6 @@ function openEditModal(syllabus) {
   openModal();
 }
 
-// Delete syllabus
 function deleteSyllabus(id) {
   if (!confirm('Are you sure you want to delete this syllabus?')) return;
 

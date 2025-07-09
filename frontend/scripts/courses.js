@@ -25,7 +25,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   heading.textContent = `Courses for Class ${className}`;
 
   try {
-    // ✅ Step 1: Fetch enrolled course IDs
     const enrolledRes = await fetch("http://localhost:8080/api/enroll/my-courses", {
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -35,7 +34,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     const enrolledCourses = await enrolledRes.json();
     enrolledCourseIds = enrolledCourses.map(c => c.courseId);
 
-    // ✅ Step 2: Fetch class-specific courses
     const res = await fetch(`http://localhost:8080/api/courses/${className}`, {
       headers: { Authorization: `Bearer ${token}` }
     });

@@ -21,7 +21,6 @@ const studentIdInput = document.getElementById("editStudentId");
 const fatherNameInput = document.getElementById("editFatherName");
 const motherNameInput = document.getElementById("editMotherName");
 
-
 function openEditModal(student) {
   fullNameInput.value = student.fullName;
   rollNumberInput.value = student.rollNumber;

@@ -94,7 +94,6 @@ label {
   background-color: #c0392b;
 }
 
-/* Modal styling (shared) */
 .modal {
   position: fixed;
   z-index: 1000;

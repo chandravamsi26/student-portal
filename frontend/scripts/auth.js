@@ -20,7 +20,6 @@ signupToggle.onclick = () => {
   message.textContent = "";
 };
 
-// 🔐 Login
 loginForm.onsubmit = async (e) => {
   e.preventDefault();
   const identifier = document.getElementById("loginIdentifier").value.trim();
@@ -55,7 +54,6 @@ loginForm.onsubmit = async (e) => {
   }
 };
 
-// 📩 Send OTP
 document.getElementById("sendOtpBtn").onclick = async () => {
   const identifier = document.getElementById("signupIdentifier").value.trim();
   const password = document.getElementById("signupPassword").value.trim();
@@ -85,7 +83,6 @@ document.getElementById("sendOtpBtn").onclick = async () => {
   }
 };
 
-// ✅ Complete Signup
 signupForm.onsubmit = async (e) => {
   e.preventDefault();
   const identifier = document.getElementById("signupIdentifier").value.trim();
@@ -117,12 +114,10 @@ signupForm.onsubmit = async (e) => {
   }
 };
 
-// ✅ Utility
 function isEmail(value) {
   return /\S+@\S+\.\S+/.test(value);
 }
 
-// ✅ JWT decoder to extract role
 function decodeJwt(token) {
   try {
     const payloadBase64 = token.split('.')[1];

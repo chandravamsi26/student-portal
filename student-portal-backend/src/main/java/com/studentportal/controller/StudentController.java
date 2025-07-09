@@ -3,7 +3,6 @@ package com.studentportal.controller;
 import com.studentportal.dto.StudentDto;
 import com.studentportal.dto.StudentWithCoursesDto;
 import com.studentportal.entity.Role;
-import com.studentportal.entity.Student;
 import com.studentportal.service.JwtService;
 import com.studentportal.service.StudentService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -44,9 +43,6 @@ public class StudentController {
         }
     }
 
-
-
-    // ✅ Fetching Student Details
     @GetMapping("/details")
     public ResponseEntity<Map<String, Object>> getStudent(@RequestHeader("Authorization") String token) {
         try {
@@ -59,7 +55,7 @@ public class StudentController {
                     })
                     .orElseGet(() -> {
                         Map<String, Object> response = new HashMap<>();
-                        response.put("student", null);  // 👈 return null in JSON safely
+                        response.put("student", null);
                         return ResponseEntity.ok(response);
                     });
         } catch (Exception e) {

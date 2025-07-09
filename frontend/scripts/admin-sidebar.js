@@ -19,7 +19,7 @@ export function loadAdminSidebar(active) {
   script.src = "scripts/logout.js";
   script.onload = function () {
     if (typeof window.attachLogout === "function") {
-      window.attachLogout(); // ⬅️ Call it after the button is in DOM
+      window.attachLogout(); 
     }
   };
   document.body.appendChild(script);

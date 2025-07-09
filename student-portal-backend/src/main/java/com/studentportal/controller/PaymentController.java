@@ -37,7 +37,7 @@ public class PaymentController {
         Map<String, Object> response = new HashMap<>();
         response.put("orderId", order.getOrderId());
         response.put("amount", order.getAmount());
-        response.put("key", keyId); // ✅ send public key to frontend
+        response.put("key", keyId); //
 
         return ResponseEntity.ok(response);
     }

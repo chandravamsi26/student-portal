@@ -15,5 +15,5 @@ public class Syllabus {
     @Id
     private String id;
     private String className;
-    private Map<String, String> subjects; // e.g., { "Math": "Algebra and Geometry", ... }
+    private Map<String, String> subjects;
 }

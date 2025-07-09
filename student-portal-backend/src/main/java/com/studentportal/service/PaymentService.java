@@ -6,7 +6,6 @@ import com.razorpay.RazorpayException;
 import com.razorpay.Utils;
 import com.studentportal.entity.PaymentOrder;
 import com.studentportal.repository.PaymentOrderRepository;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,7 +39,7 @@ public class PaymentService {
             Order razorpayOrder = razorpay.orders.create(orderRequest);
 
             PaymentOrder order = PaymentOrder.builder()
-                    .orderId(razorpayOrder.get("id")) // ✅ use Razorpay's orderId
+                    .orderId(razorpayOrder.get("id"))
                     .userId(userId)
                     .courseId(courseId)
                     .amount(amount)
@@ -49,8 +48,6 @@ public class PaymentService {
                     .build();
 
             return paymentRepo.save(order);
-
-
         } catch (RazorpayException e) {
             throw new RuntimeException("Failed to create Razorpay order: " + e.getMessage());
         }
@@ -67,7 +64,6 @@ public class PaymentService {
         try {
             String payload = orderId + "|" + paymentId;
 
-            // Use injected secret
             boolean isValid = Utils.verifySignature(payload, signature, keySecret);
 
             if (!isValid) {

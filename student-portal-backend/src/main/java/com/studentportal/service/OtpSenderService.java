@@ -20,35 +20,19 @@ public class OtpSenderService {
     private final String API_KEY = "940afb33-5665-11f0-a562-0200cd936042";
 
     public void sendSmsOtp(String mobile, String otp) {
-        String url = "https://2factor.in/API/V1/" + API_KEY + "/ADDON_SERVICES/SEND/TSMS";
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        String message = "Your OTP for Student Portal is: " + otp;
-
-        String jsonPayload = String.format("""
-        {
-            "From": "SMSIND",
-            "To": "%s",
-            "Msg": "%s"
-        }
-        """, mobile, message);
-
-        HttpEntity<String> entity = new HttpEntity<>(jsonPayload, headers);
+        String url = "https://2factor.in/API/V1/" + API_KEY + "/SMS/" + mobile + "/" + otp + "/AUTOGEN";
 
         try {
-            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
+            ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
             System.out.println("SMS Response: " + response.getBody());
             System.out.println("HTTP Status: " + response.getStatusCode());
 
-            if (response.getStatusCode() != HttpStatus.OK) {
+            if (!response.getStatusCode().is2xxSuccessful()) {
                 throw new RuntimeException("Failed to send SMS OTP: " + response.getBody());
             }
         } catch (Exception e) {
             throw new RuntimeException("Error while sending SMS OTP", e);
         }
-
     }
 
 
@@ -58,7 +42,7 @@ public class OtpSenderService {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
             helper.setTo(to);
-            helper.setSubject("🔐 Your OTP for Student Portal Login");
+            helper.setSubject("Your OTP for Student Portal Signup");
 
             String htmlContent = "<div style='font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9;'>" +
                     "<div style='max-width: 600px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);'>" +
@@ -77,7 +61,7 @@ public class OtpSenderService {
                     "</div>" +
                     "</div>";
 
-            helper.setText(htmlContent, true); // true = is HTML
+            helper.setText(htmlContent, true);
             mailSender.send(message);
         } catch (MessagingException e) {
             throw new RuntimeException("Failed to send OTP email", e);

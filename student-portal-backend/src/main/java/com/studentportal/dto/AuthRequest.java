@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class AuthRequest {
-    private String email;    // optional
-    private String mobile;   // optional
+    private String email;
+    private String mobile;
     private String otp;
     private String password;
 }

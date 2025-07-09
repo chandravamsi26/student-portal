@@ -67,5 +67,4 @@ public class CourseService {
         courseRepository.deleteById(courseId);
         return "Course deleted successfully";
     }
-
 }

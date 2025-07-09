@@ -16,7 +16,6 @@ const addCourseBtn = document.getElementById("addCourseBtn");
 
 let currentEditingCourseId = null;
 
-// Fetch and show courses by class
 classFilter.addEventListener("change", () => {
   const className = classFilter.value;
   if (!className) return;
@@ -51,7 +50,6 @@ classFilter.addEventListener("change", () => {
     .catch(() => handleError("Failed to load courses"));
 });
 
-// Show modal to add new
 addCourseBtn.addEventListener("click", () => {
   currentEditingCourseId = null;
   modalTitle.textContent = "Add Course";
@@ -59,7 +57,6 @@ addCourseBtn.addEventListener("click", () => {
   modal.style.display = "flex";
 });
 
-// Save or update course
 courseForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -90,12 +87,11 @@ courseForm.addEventListener("submit", (e) => {
     .then(res => res.text())
     .then(() => {
       modal.style.display = "none";
-      classFilter.dispatchEvent(new Event("change")); // refresh course list
+      classFilter.dispatchEvent(new Event("change"));  
     })
     .catch(() => handleError("Failed to save course"));
 });
 
-// Edit
 function openEditModal(courseId) {
   currentEditingCourseId = courseId;
   modalTitle.textContent = "Edit Course";
@@ -118,7 +114,6 @@ function openEditModal(courseId) {
     });
 }
 
-// Delete
 function deleteCourse(courseId) {
   if (!confirm("Are you sure you want to delete this course?")) return;
 

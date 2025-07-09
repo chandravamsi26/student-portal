@@ -16,7 +16,7 @@ public class PaymentOrder {
     private String userId;
     private String courseId;
     private double amount;
-    private String status;      // PENDING, SUCCESS, FAILED
+    private String status;
     private String createdAt;
     private String paymentId;
 }

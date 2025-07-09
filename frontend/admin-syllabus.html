@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- Load Sidebar -->
   <script type="module">
     import { loadAdminSidebar } from './scripts/admin-sidebar.js';
     loadAdminSidebar('syllabus');
@@ -18,7 +17,6 @@
   <main class="main-content">
     <h1>Manage Syllabus</h1>
 
-    <!-- Class List Section -->
     <div class="class-list">
       <label for="classFilter">Select Class:</label>
       <select id="classFilter">
@@ -40,15 +38,10 @@
       </div>
     </div>
 
-    <!-- Add Syllabus Button -->
-
-    <!-- Syllabus Display Section -->
     <div id="syllabusContainer" class="syllabus-list">
-      <!-- Syllabus cards will be populated here -->
     </div>
   </main>
 
-  <!-- Add/Edit Modal -->
   <div id="syllabusModal" class="modal" style="display: none;">
     <div class="modal-content">
       <span class="close-btn" id="closeModalBtn">&times;</span>
@@ -60,8 +53,6 @@
 
         <label for="subjects">Subjects (as JSON key-value pairs)</label>
         <textarea id="subjectsInput" name="subjects" rows="8" placeholder='e.g. {"Math": "Algebra", "Science": "Physics"}' required></textarea>
-
-
         <button type="submit" class="save-btn">Save</button>
       </form>
     </div>

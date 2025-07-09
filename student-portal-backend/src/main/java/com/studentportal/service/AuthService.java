@@ -32,7 +32,6 @@ public class AuthService {
             throw new RuntimeException("Either email or mobile is required");
         }
 
-        // Check if user already exists
         Optional<User> existingUser = request.getEmail() != null
                 ? userRepository.findByEmail(request.getEmail())
                 : userRepository.findByMobile(request.getMobile());
@@ -46,15 +45,17 @@ public class AuthService {
         String otp = String.valueOf(new Random().nextInt(899999) + 100000);
         OtpStore.storeOtp(contact, otp);
 
-        // Send OTP to email or mobile
         if (request.getEmail() != null) {
             otpSenderService.sendEmailOtp(request.getEmail(), otp);
             return "OTP sent to your email";
         } else {
-            // we will implement real SMS sending in the next step
-//            otpSenderService.sendSmsOtp(request.getMobile(), otp);
-            System.out.println("OTP for mobile " + request.getMobile() + ": " + otp);
-            return "OTP sent to your mobile number";
+            try {
+//                otpSenderService.sendSmsOtp(request.getMobile(), otp);
+                System.out.println("OTP for mobile " + request.getMobile() + ": " + otp);
+                return "OTP sent to your mobile number";
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to send OTP to mobile", e);
+            }
         }
     }
 
