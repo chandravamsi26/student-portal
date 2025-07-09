@@ -15,21 +15,20 @@ const syllabusIdInput = document.getElementById('syllabusId');
 
 let currentClass = null;
 
-const classes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+// const classes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
-// Render class buttons
-function renderClassButtons() {
-  classes.forEach(cls => {
-    const btn = document.createElement('button');
-    btn.textContent = `Class ${cls}`;
-    btn.classList.add('class-btn');
-    btn.addEventListener('click', () => {
-      currentClass = cls;
-      fetchSyllabusByClass(cls);
-    });
-    classButtonsContainer.appendChild(btn);
-  });
-}
+const classFilter = document.getElementById("classFilter");
+
+classFilter.addEventListener("change", () => {
+  const selectedClass = classFilter.value;
+  if (selectedClass) {
+    currentClass = selectedClass;
+    fetchSyllabusByClass(selectedClass);
+  } else {
+    syllabusContainer.innerHTML = "<p>Please select a class to view syllabus.</p>";
+  }
+});
+
 
 // Fetch syllabus by class
 function fetchSyllabusByClass(className) {
@@ -176,5 +175,3 @@ function deleteSyllabus(id) {
     .catch(() => alert('Failed to delete syllabus.'));
 }
 
-// Init
-renderClassButtons();

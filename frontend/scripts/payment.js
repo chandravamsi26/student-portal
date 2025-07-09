@@ -30,6 +30,7 @@ if (!courseId || !token) {
 
       courseDetailsEl.innerHTML = `
         <p><strong>Title:</strong> ${course.title}</p>
+        <p><strong>Description:</strong> ${course.description}</p>
         <p><strong>Instructor:</strong> ${course.instructorName}</p>
         <p><strong>Duration:</strong> ${course.duration}</p>
         <p><strong>Price:</strong> ₹${course.price}</p>

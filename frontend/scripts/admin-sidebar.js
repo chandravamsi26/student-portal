@@ -6,7 +6,7 @@ export function loadAdminSidebar(active) {
         <li><a href="admin-dashboard.html" class="${active === 'dashboard' ? 'active' : ''}">Dashboard</a></li>
         <li><a href="admin-students.html" class="${active === 'students' ? 'active' : ''}">Manage Students</a></li>
         <li><a href="admin-courses.html" class="${active === 'courses' ? 'active' : ''}">Manage Courses</a></li>
-        <li><a href="admin-syllabus.html" class="${active === 'syllabus' ? 'active' : ''}">Add Syllabus</a></li>
+        <li><a href="admin-syllabus.html" class="${active === 'syllabus' ? 'active' : ''}">Manage Syllabus</a></li>
         <li><button id="logoutBtn">Logout</button></li>
       </ul>
     </aside>

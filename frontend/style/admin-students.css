@@ -98,6 +98,10 @@ h1 {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
+.modal-content, .modal-content * {
+  box-sizing: border-box;
+}
+
 .modal-content h2 {
   margin-bottom: 20px;
   font-size: 22px;
@@ -142,4 +146,15 @@ h1 {
 
 .edit-btn:hover {
   background: #2980b9;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #2c3e50
 }
