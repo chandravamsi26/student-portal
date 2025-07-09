@@ -1,0 +1,74 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+/* Main container */
+.enrolled-container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+/* Course grid layout */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Course card */
+.course-card {
+  background-color: #ffffff;
+  border: 1px solid #e3e9f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #007bff;
+}
+
+.course-details p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #555;
+}
+
+/* Error message */
+.error-message {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #e74c3c;
+}

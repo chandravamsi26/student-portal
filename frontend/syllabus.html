@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Syllabus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/syllabus.css" />
+  <link rel="stylesheet" href="style/navbar.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <main class="syllabus-container">
+    <h2 id="heading">Syllabus</h2>
+
+    <section id="syllabusSection">
+      <ul id="syllabusList" class="syllabus-list"></ul>
+      <p id="error" class="error-message"></p>
+    </section>
+  </main>
+
+  <script type="module">
+    import { loadNavbar } from './scripts/navbar.js';
+    loadNavbar("syllabus");
+  </script>
+  <script src="scripts/logout.js"></script>
+  <script type="module" src="scripts/syllabus.js"></script>
+</body>
+</html>

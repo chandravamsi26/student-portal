@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/payment.css" />
+  <link rel="stylesheet" href="style/navbar.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="payment-container">
+    <h2>Confirm Payment</h2>
+    <div id="courseDetails"></div>
+    <button id="payBtn">Pay and Enroll</button>
+    <div class="spinner" id="spinner" style="display: none;"></div>
+    <p id="status" class="status-message"></p>
+  </main>
+
+  <script type="module">
+    import { loadNavbar } from './scripts/navbar.js';
+    loadNavbar("courses");
+  </script>
+  <script src="scripts/logout.js"></script>
+  <script type="module" src="scripts/payment.js"></script>
+</body>
+</html>

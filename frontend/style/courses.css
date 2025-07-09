@@ -1,0 +1,95 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Container */
+.courses-container {
+  max-width: 1200px;
+  margin: 60px auto 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+h2#heading {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Course Card */
+.course-card {
+  background: #ffffff;
+  border: 1px solid #e3e9f0;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.course-card h3 {
+  color: #007bff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.course-card .price {
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 10px;
+}
+
+/* Enroll Button */
+.course-card button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.course-card button:hover {
+  background: #0056b3;
+}
+
+/* Error */
+.error-message {
+  text-align: center;
+  color: #e74c3c;
+  margin-top: 20px;
+  font-weight: bold;
+}

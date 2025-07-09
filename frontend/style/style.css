@@ -1,0 +1,108 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle buttons */
+.slider {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.slider button {
+  flex: 1;
+  padding: 10px;
+  margin: 0 3px;
+  border: none;
+  background: #eee;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.slider button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Forms */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.google-btn {
+  background-color: #db4437;
+  margin-top: 8px;
+}
+
+button.google-btn:hover {
+  background-color: #c23321;
+}
+
+/* Message */
+.message {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: red;
+}
+
+/* OTP Field */
+.otp-section {
+  margin-top: 10px;
+  display: none;
+  flex-direction: column;
+}

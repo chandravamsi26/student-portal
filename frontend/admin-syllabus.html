@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - Manage Syllabus</title>
+  <link rel="stylesheet" href="style/admin.css" />
+  <link rel="stylesheet" href="style/admin-syllabus.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+  <!-- Load Sidebar -->
+  <script type="module">
+    import { loadAdminSidebar } from './scripts/admin-sidebar.js';
+    loadAdminSidebar('syllabus');
+  </script>
+
+  <main class="main-content">
+    <h1>Manage Syllabus</h1>
+
+    <!-- Class List Section -->
+    <div class="class-list">
+      <h3>Classes</h3>
+      <div class="class-buttons" id="classButtons">
+        <!-- Class buttons will be injected here -->
+      </div>
+    </div>
+
+    <!-- Add Syllabus Button -->
+    <button id="addSyllabusBtn" class="add-btn">+ Add Syllabus</button>
+
+    <!-- Syllabus Display Section -->
+    <div id="syllabusContainer" class="syllabus-list">
+      <!-- Syllabus cards will be populated here -->
+    </div>
+  </main>
+
+  <!-- Add/Edit Modal -->
+  <div id="syllabusModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h2 id="modalTitle">Add Syllabus</h2>
+      <form id="syllabusForm">
+        <input type="hidden" id="syllabusId" />
+        <label>Class Name:</label>
+        <input type="text" id="classNameInput" placeholder="e.g. 5" required />
+
+        <label for="subjects">Subjects (as JSON key-value pairs)</label>
+        <textarea id="subjectsInput" name="subjects" rows="8" placeholder='e.g. {"Math": "Algebra", "Science": "Physics"}' required></textarea>
+
+
+        <button type="submit" class="save-btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="scripts/admin-syllabus.js"></script>
+</body>
+</html>

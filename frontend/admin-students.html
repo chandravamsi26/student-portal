@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Students</title>
+  <link rel="stylesheet" href="style/admin.css" />
+  <link rel="stylesheet" href="style/admin-students.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <script type="module">
+    import { loadAdminSidebar } from './scripts/admin-sidebar.js';
+    loadAdminSidebar('students');
+  </script>
+
+  <main class="main-content">
+    <h1>Manage Students</h1>
+    <div id="studentList" class="student-list"></div>
+    <p id="error" class="error-message"></p>
+  </main>
+  <!-- Edit Student Modal -->
+  <div id="editStudentModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModalBtn">&times;</span>
+    <h2>Edit Student</h2>
+    <form id="editStudentForm">
+    <input type="hidden" id="editStudentId" />
+    <input type="text" id="editFullName" placeholder="Full Name" required />
+    <input type="text" id="editRollNumber" placeholder="Roll Number" required />
+    <input type="text" id="editSchoolName" placeholder="School Name" required />
+    <input type="text" id="editClassName" placeholder="Class Name" required />
+    <input type="text" id="editFatherName" placeholder="Father's Name" required />
+    <input type="text" id="editMotherName" placeholder="Mother's Name" required />
+    <button type="submit">Update Student</button>
+    </form>
+  </div>
+  </div>
+
+
+  <script type="module" src="scripts/admin-students.js"></script>
+</body>
+</html>

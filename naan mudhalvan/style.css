@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #203A35;
+}
+
+/* === TOP HEADER === */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.left-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left-logo img {
+  height: 65px;
+}
+
+.gov-text {
+  line-height: 1.3;
+  font-size: 13px;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pill-btn {
+  background-color: #edf3f0;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.lang-switch {
+  font-size: 14px;
+  color: #444;
+}
+
+.profile-img {
+  height: 48px;
+  border-radius: 50%;
+}
+
+.login-btn {
+  background-color: #1f3a34;
+  color: white;
+  padding: 7px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background-color: #1f3a34;
+  padding: 10px 30px;
+  border-bottom: 4px solid #ffd9b3;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffd9b3;
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  padding: 80px 20px 40px;
+  text-align: center;
+  background-color: #203A35;
+  overflow: hidden;
+}
+
+.bg-map {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.08;
+  height: 300px;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFD9B3;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+/* === QUOTES SECTION === */
+.quotes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.quote-box {
+  background-color: #1F3A34;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  line-height: 1.5;
+}
+
+.quote-box img {
+  height: 75px;
+  border-radius: 50%;
+}
+
+/* === FOOTER MARQUEE === */
+.footer-bar {
+  background-color: #FBE9D0;
+  color: maroon;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-bar a {
+  color: maroon;
+  text-decoration: underline;
+}

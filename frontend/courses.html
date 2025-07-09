@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style/courses.css" />
+  <link rel="stylesheet" href="style/navbar.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="courses-container">
+    <h2 id="heading">Courses</h2>
+    <div id="courseList" class="course-grid"></div>
+    <p id="error" class="error-message"></p>
+  </main>
+
+  <script type="module">
+    import { loadNavbar } from './scripts/navbar.js';
+    loadNavbar("courses");
+  </script>
+  <script src="scripts/logout.js"></script>
+  <script type="module" src="scripts/courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Portal - Login & Signup</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  
+  <h1 class="portal-heading">🏫 Welcome to School Portal</h1>
+  <div id="container" class="container">
+    <!-- FORM SECTION -->
+    <div class="row">
+      <!-- SIGN UP -->
+      <div class="col align-items-center flex-col sign-up">
+        <div class="form-wrapper align-items-center">
+          <div class="form sign-up">
+            <div class="input-group">
+              <i class="bx bxs-phone"></i>
+              <input type="text" id="signupMobile" placeholder="Mobile Number" />
+            </div>
+            <div class="input-group">
+              <i class="bx bxs-lock-alt"></i>
+              <input type="password" id="signupPassword" placeholder="Set Password" />
+            </div>
+            <div class="input-group" id="otpGroup" style="display: none;">
+              <i class="bx bxs-key"></i>
+              <input type="text" id="signupOtp" placeholder="Enter OTP" />
+            </div>
+            <button onclick="requestOtp()" id="requestOtpBtn">Request OTP</button>
+            <button onclick="verifyOtp()" id="verifyOtpBtn" style="display: none;">Verify OTP</button>
+            <div class="message" id="signupMessage"></div>
+            <p>
+              <button class="google-btn" onclick="loginWithGoogle()">Continue with Google</button>
+            </p>
+            <p>
+              <span>Already have an account?</span>
+              <b onclick="toggle()" class="pointer">Sign in here</b>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIGN IN -->
+      <div class="col align-items-center flex-col sign-in">
+        <div class="form-wrapper align-items-center">
+          <div class="form sign-in">
+            <div class="input-group">
+              <i class="bx bxs-phone"></i>
+              <input type="text" id="loginMobile" placeholder="Mobile Number" />
+            </div>
+            <div class="input-group">
+              <i class="bx bxs-lock-alt"></i>
+              <input type="password" id="loginPassword" placeholder="Password" />
+            </div>
+            <button onclick="login()">Login</button>
+            <div class="message" id="loginMessage"></div>
+            <p>
+              <button class="google-btn" onclick="loginWithGoogle()">Continue with Google</button>
+            </p>
+            <p>
+              <span>Don't have an account?</span>
+              <b onclick="toggle()" class="pointer">Sign up here</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <div class="row content-row">
+      <div class="col align-items-center flex-col">
+        <div class="text sign-in">
+          <h2>Welcome</h2>
+          <p>Login to your student portal</p>
+        </div>
+      </div>
+      <div class="col align-items-center flex-col">
+        <div class="text sign-up">
+          <h2>Join with us</h2>
+          <p>Create your student portal account</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Form</title>
+  <link rel="stylesheet" href="/style/students.css" />
+</head>
+<body>
+  <!-- Shared Navbar -->
+  <div id="navbar"></div>
+
+  <main class="container">
+    <h2>Student Information Form</h2>
+
+    <div id="form-container" style="display: none;">
+      <form id="studentForm">
+        <input type="text" id="fullName" placeholder="Full Name" required />
+        <input type="text" id="rollNumber" placeholder="Roll Number" required />
+        <input type="text" id="schoolName" placeholder="School Name" required />
+        <input type="text" id="className" placeholder="Class Name" required />
+        <input type="text" id="fatherName" placeholder="Father's Name" required />
+        <input type="text" id="motherName" placeholder="Mother's Name" required />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="submitted-details" style="display: none;">
+      <h3>Form Already Submitted</h3>
+      <div id="detailsBox"></div>
+    </div>
+
+    <p id="message" class="form-message"></p>
+  </main>
+
+  <script src="/scripts/navbar.js" type="module"></script>
+  <script src="/scripts/logout.js"></script>
+  <script src="/scripts/students.js" type="module"></script>
+</body>
+</html>

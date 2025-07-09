@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f7f7f7;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input, textarea, select, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      font-size: 14px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    .logout {
+      float: right;
+      background-color: red;
+      margin-top: -30px;
+    }
+    #logoutBtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="welcomeMessage">Welcome!</h2>
+
+  <form id="studentForm" onsubmit="submitStudentForm(event)">
+    <h3>Student Details</h3>
+    <input type="text" id="fullName" placeholder="Full Name" required />
+    <input type="text" id="rollNumber" placeholder="Roll Number" required />
+    <input type="text" id="schoolName" placeholder="School Name" required />
+    <select id="className" required>
+      <option value="">Select Class</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+    <textarea id="familyDetails" placeholder="Family Details"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <button id="logoutBtn">Logout</button>
+
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

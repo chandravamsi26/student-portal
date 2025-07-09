@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Google Login</title></head>
+<body>
+  <h2>Logging you in...</h2>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    if (token) {
+      localStorage.setItem("token", token);
+      window.location.href = "/dashboard.html";
+    } else {
+      alert("Login failed.");
+      window.location.href = "/index.html";
+    }
+  </script>
+</body>
+</html>
